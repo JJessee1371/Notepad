@@ -1,10 +1,22 @@
 const express = require('express');
+const path = require('path');
 const app = express();
 const PORT = process.env.PORT || 3000;
 
+//Middleware for data parsing
+app.use(express.urlencoded({ extended: true }));
+app.use(express.json());
+
+
 //GET /notes will return the notes.html page
+app.get('/', (req, res) => {
+    res.sendFile(path.join(__dirname, 'notes.html'));
+});
 
 // * returns the index.html page
+app.get('*', (req, res) => {
+    res.sendFile(path.join(__dirname, 'index.html'));
+});
 
 // GET /api/notes reads the db.json file and retuns all saved notes
 
