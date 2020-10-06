@@ -1,1 +1,1 @@
-[{"title":"Test Title","text":"Test text","title2":"Test2 Title","text2":"Test text2"},{"This is a new test":"Testing the POST by rewrite"}]
+[{"title":"Test Title","text":"Test text","title2":"Test2 Title","text2":"Test text2"},{"title3":"new title", "text3":"new text"}, {"title4": "new title", "text4":"new text again"}]
