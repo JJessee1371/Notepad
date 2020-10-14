@@ -38,42 +38,6 @@
 
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
   <script src="/assets/js/index.js"></script>
-  <script>
-    //Load all saved notes when page is opened
-    $.get('/api/notes', data => {
-      console.log(data);
-      let savedNotes = data;
-
-      savedNotes.forEach((note) => {
-        let listItem = $(
-        `<li>
-        <strong>${note.title}</strong>
-        ${note.text}
-        </li>`);
-        $('.list-group').append(listItem);
-      });
-    });
-
-    //Saves notes via POST request
-    $('#save').on('click', (event) => {
-      const newNote = {
-        title: $('.note-title').val().trim(),
-        text: $('.note-textarea').val().trim()
-      };
-
-      $.post('/api/notes', newNote)
-      .then((data) => {
-        console.log(data);
-      });
-
-      let listItem = $(`
-        <li>
-        <strong>${newNote.title}</strong>
-        ${newNote.text}
-        </li>`);
-        $('.list-group').append(listItem);
-    });
-  </script>
 </body>
 
 </html>
