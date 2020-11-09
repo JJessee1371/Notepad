@@ -10,6 +10,9 @@ a JSON file acted as a kind of database to maintain all of the data that the use
 
 Google Drive video link [https://drive.google.com/file/d/15B5B3zbeXuiegNKDMW_e0K2Cr0nDb2EZ/view?usp=sharing]
 
+## Deployed Site
+https://peaceful-brook-94616.herokuapp.com/
+
 ## Technologies
 * Express (https://www.expressjs.com)
 
