@@ -4,12 +4,14 @@ const fs = require('fs');
 const app = express();
 const PORT = process.env.PORT || 3000;
 
-
+//Contents of public folder are staticly served
 app.use(express.static( __dirname + '/public' ));
+
 //Middleware for data parsing
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 
+//Server listening for activity
 app.listen(PORT, () => {
     console.log(`Server is listening on PORT ${PORT}`);
 });
@@ -68,8 +70,6 @@ app.delete('/api/notes/:id', (req, res) => {
 
         let json = JSON.parse(data);
         const toDelete = json.find(note => {
-            console.log(note.id);
-            console.log(selected);
             return note.id == selected
         });
         if(!toDelete) {
